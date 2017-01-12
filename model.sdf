@@ -1,0 +1,1037 @@
+<?xml version="1.0" ?>
+          <sdf version ='1.5'>
+            <model name='MobileARM'>
+               <link name='base'>
+              
+<inertial>
+<pose>-0.000343 -0.031814 -0.26 0 0 0</pose><!---->
+<mass>80</mass>
+<inertia>
+<ixx>4.8644</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>4.4168</iyy>
+<iyz>0.812</iyz>
+<izz>2.6494</izz>
+</inertia>
+</inertial>
+
+                   <pose>0.000000 0.000000 0.605 0.000000 0.000000 0</pose>
+                   <collision name='base'>
+                      <geometry>
+                         <mesh>
+                            <uri>model://MobileARM/links/AGV/base.dae</uri>
+                         </mesh>
+                      </geometry>
+<surface>
+<friction>
+<ode>
+<mu>1000</mu>
+<mu2>1000</mu2>
+</ode>
+</friction>
+</surface>
+                   </collision>
+                   <visual name='base'>
+                      <geometry>
+                         <mesh>
+                            <uri>model://MobileARM/links/AGV/base.dae</uri>
+                         </mesh>
+                      </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.645 0.625 0.594 1</diffuse>
+                        <specular>0.85 0.85 0.82 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                   </visual>
+               </link>
+            <link name='link1'>
+<inertial>
+<pose>-0.000382 -0.043316 0 0 0 0</pose><!---->
+<mass>6</mass>
+<inertia>
+<ixx>0.3</ixx>
+<ixy>0</ixy>
+<ixz>0.001</ixz>
+<iyy>0.31</iyy>
+<iyz>-0.003</iyz>
+<izz>0.018</izz>
+</inertia>
+</inertial>
+                  <pose>0.000000 0.000000 0.85 0.000000 0.000000 0</pose>
+                  <collision name='link1'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/AGV/link1.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='link1'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/AGV/link1.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.645 0.625 0.594 1</diffuse>
+                        <specular>0.85 0.85 0.82 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='link2'>
+<inertial>
+<pose> 0.002196 -0.000101 0 0 0 0</pose><!---->
+<mass>1</mass>
+<inertia>
+<ixx>0.000001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.000001</iyy>
+<iyz>0</iyz>
+<izz>0.00001</izz>
+</inertia>
+</inertial>
+                  <pose>0 -0.02393 1.27 0.000000 0.000000 0</pose>
+                  <collision name='link2'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/AGV/link2.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='link2'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/AGV/link2.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.645 0.625 0.594 1</diffuse>
+                        <specular>0.85 0.85 0.82 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='link3'>
+
+
+<inertial>
+<pose>0.001199 0.073593 0 0 0 0</pose><!---->
+<mass>2</mass>
+<inertia>
+<ixx>0.000001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.000001</iyy>
+<iyz>0</iyz>
+<izz>0.00001</izz>
+</inertia>
+</inertial>
+
+                  <pose>-0 -0.02393 1.27576 0.000000 0.000000 0</pose>
+                  <collision name='link3'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/AGV/link3.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='link3'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/AGV/link3.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.645 0.625 0.594 1</diffuse>
+                        <specular>0.85 0.85 0.82 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+
+               <joint name='joint1' type='prismatic'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>link1</child>
+                   <parent>base</parent>
+                   <axis>
+                       <xyz>0 0 1</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0.4</upper>
+                       </limit>
+                   </axis>
+               </joint>
+               <joint name='joint2' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>link2</child>
+                   <parent>link1</parent>
+                   <axis>
+                       <xyz>0 0 1</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+               <joint name='joint3' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>link3</child>
+                   <parent>link2</parent>
+                   <axis>
+                       <xyz>1 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+
+                   <link name='U-base'>
+                   
+<inertial>
+<mass>8</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>                   
+                   
+                   
+                   <pose>-0.040000 0.045000 0.48000 0.000000 0.000000 0</pose>
+                   <collision name='U-base'>
+                      <geometry>
+                         <mesh>
+                            <uri>model://MobileARM/links/UR5/base.dae</uri>
+                         </mesh>
+                      </geometry>
+                   </collision>
+                   <visual name='U-base'>
+                      <geometry>
+                         <mesh>
+                            <uri>model://MobileARM/links/UR5/base.dae</uri>
+                         </mesh>
+                      </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.645 0.625 0.594 1</diffuse>
+                        <specular>0.85 0.85 0.82 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                   </visual>
+               </link>
+              <link name='U-link1'>
+                   
+<inertial>
+<mass>4</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>      
+
+
+
+      
+                  <pose>-0.040000 0.045000 0.56916 0.000000 0.000000 0</pose>
+                  <collision name='link1'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link1.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link1'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link1.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.2775 0.2775 0.2775 1</diffuse>
+                        <specular>0.773911 0.773911 0.773911 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+             <link name='U-link1_hat'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000 0.045000 0.56916 0.000000 0.000000 0</pose>
+                  <collision name='link1_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link1_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link1_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link1_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.3 0.3 1 1</diffuse>
+                        <specular>1 1 1 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='U-link2'>
+                   
+<inertial>
+<mass>3</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000 0.18085 0.56916 0.000000 0.000000 0</pose>
+                  <collision name='U-link2'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link2.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link2'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link2.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.2775 0.2775 0.2775 1</diffuse>
+                        <specular>0.773911 0.773911 0.773911 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='U-link2_down_hat'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000 0.18085 0.56916 0.000000 0.000000 0</pose>
+                  <collision name='U-link2_down_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link2_down_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link2_down_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link2_down_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.3 0.3 1 1</diffuse>
+                        <specular>1 1 1 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='U-link2_pillar'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000 0.18085 0.56916 0.000000 0.000000 0</pose>
+                  <collision name='U-link2_pillar'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link2_pillar.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link2_pillar'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link2_pillar.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.645 0.625 0.594 1</diffuse>
+                        <specular>0.85 0.85 0.82 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+                  <link name='U-link2_up'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000 0.18085 0.56916 0.000000 0.000000 0</pose>
+                  <collision name='U-link2_up'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link2_up.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link2_up'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link2_up.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.2775 0.2775 0.2775 1</diffuse>
+                        <specular>0.773911 0.773911 0.773911 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='U-link2_up_hat'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000 0.18085 0.56916 0.000000 0.000000 0</pose>
+                  <collision name='link2_up_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link2_up_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link2_up_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link2_up_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.3 0.3 1 1</diffuse>
+                        <specular>1 1 1 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='U-link3'>
+                   
+<inertial>
+<mass>2</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000  0.062150 0.994160 0.000000 0.000000 0</pose>
+                  <collision name='U-link3'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link3.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link3'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link3.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.2775 0.2775 0.2775 1</diffuse>
+                        <specular>0.773911 0.773911 0.773911 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+              <link name='U-link3_pillar'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000  0.062150 0.994160 0.000000 0.000000 0</pose>
+                  <collision name='U-link3_pillar'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link3_pillar.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link3_pillar'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link3_pillar.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.645 0.625 0.594 1</diffuse>
+                        <specular>0.85 0.85 0.82 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='U-link3_up'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000  0.062150 0.994160 0.000000 0.000000 0</pose>
+                  <collision name='U-link3_up'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link3_up.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link3_up'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link3_up.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.2775 0.2775 0.2775 1</diffuse>
+                        <specular>0.773911 0.773911 0.773911 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='U-link3_up_hat'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.0001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.0001</iyy>
+<iyz>0</iyz>
+<izz>0.0001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000  0.062150 0.994160 0.000000 0.000000 0</pose>
+                  <collision name='link3_up_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link3_up_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link3_up_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link3_up_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.3 0.3 1 1</diffuse>
+                        <specular>1 1 1 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='U-link4'>
+                   
+<inertial>
+<mass>1</mass>
+<inertia>
+<ixx>0.0001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.0001</iyy>
+<iyz>0</iyz>
+<izz>0.0001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000 0.06215 1.38641 0.000000 0.000000 0</pose>
+                  <collision name='U-link4'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link4.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link4'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link4.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.2775 0.2775 0.2775 1</diffuse>
+                        <specular>0.773911 0.773911 0.773911 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+               <link name='U-link4_hat'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.0001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.0001</iyy>
+<iyz>0</iyz>
+<izz>0.0001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000 0.06215 1.38641 0.000000 0.000000 0</pose>
+                  <collision name='U-link4_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link4_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link4_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link4_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.3 0.3 1 1</diffuse>
+                        <specular>1 1 1 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+                <link name='U-link5'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.0001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.0001</iyy>
+<iyz>0</iyz>
+<izz>0.0001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000  0.14515 1.38641 0.000000 0.000000 0</pose>
+                  <collision name='U-link5'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link5.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link5'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link5.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.2775 0.2775 0.2775 1</diffuse>
+                        <specular>0.773911 0.773911 0.773911 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+              <link name='U-link5_hat'>
+                   
+<inertial>
+<mass>0.1</mass>
+<inertia>
+<ixx>0.001</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.001</iyy>
+<iyz>0</iyz>
+<izz>0.001</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.040000  0.14515 1.38641 0.000000 0.000000 0</pose>
+                  <collision name='U-link5_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link5_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-link5_hat'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link5_hat.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.3 0.3 1 1</diffuse>
+                        <specular>1 1 1 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+              <link name='U-end'>
+                   
+<inertial>
+<mass>5</mass>
+<inertia>
+<ixx>0.01</ixx>
+<ixy>0</ixy>
+<ixz>0</ixz>
+<iyy>0.01</iyy>
+<iyz>0</iyz>
+<izz>0.01</izz>
+</inertia>
+</inertial>            
+                  <pose>-0.0400  0.14515 1.48106 0.000000 0.000000 0</pose>
+                  <collision name='U-end'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link6.dae</uri>
+                        </mesh>
+                     </geometry>
+                  </collision>
+                  <visual name='U-end'>
+                     <geometry>
+                        <mesh>
+                           <uri>model://MobileARM/links/UR5/link6.dae</uri>
+                        </mesh>
+                     </geometry>
+                      <material>
+                        <ambient>1 1 1 1</ambient>
+                        <diffuse>0.645 0.625 0.594 1</diffuse>
+                        <specular>0.85 0.85 0.82 1</specular>
+                        <emissive>0 0 0 0</emissive>
+                      </material>
+                  </visual>
+               </link>
+
+               <joint name='U-joint1' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link1</child>
+                   <parent>U-base</parent>
+                   <axis>
+                       <xyz>0 0 1</xyz>
+                       <limit>
+                           <lower>1.57</lower>
+                           <upper>1.57</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-link1_hat' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link1_hat</child>
+                   <parent>U-link1</parent>
+                   <axis>
+                       <xyz>0 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-joint2' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link2</child>
+                   <parent>U-link1</parent>
+                   <axis>
+                       <xyz>0 -1 0</xyz>
+                       <limit>
+                           <lower>-0.174</lower>
+                           <upper>-0.174</upper>
+                           <!--lower>-1.57</lower>
+                           <upper>-1.57</upper>--->
+                           <!---lower>0</lower>
+                           <upper>0</upper>--->
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-link2_down_hat' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link2_down_hat</child>
+                   <parent>U-link2</parent>
+                   <axis>
+                       <xyz>0 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-link2_pillar' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link2_pillar</child>
+                   <parent>U-link2</parent>
+                   <axis>
+                       <xyz>0 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-link2_up' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link2_up</child>
+                   <parent>U-link2_pillar</parent>
+                   <axis>
+                       <xyz>0 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-link2_up_hat' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link2_up_hat</child>
+                   <parent>U-link2_up</parent>
+                   <axis>
+                       <xyz>0 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-joint3' type='revolute'>
+                   <pose>0 0 0 0 -2.89 0</pose>
+                   <child>U-link3</child>
+                   <parent>U-link2_up</parent>
+                   <axis>
+                       <xyz>0 -1 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                           <!---lower>-2.819</lower>
+                           <upper>-2.819</upper>--->
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-link3_pillar' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link3_pillar</child>
+                   <parent>U-link3</parent>
+                   <axis>
+                       <xyz>0 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-link3_up' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link3_up</child>
+                   <parent>U-link3_pillar</parent>
+                   <axis>
+                       <xyz>0 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-link3_up_hat' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link3_up_hat</child>
+                   <parent>U-link3_up</parent>
+                   <axis>
+                       <xyz>0 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+               <joint name='U-joint4' type='revolute'>
+                   <pose>0 0 0 0 2.443 0</pose>
+                   <child>U-link4</child>
+                   <parent>U-link3_up</parent>
+                   <axis>
+                       <xyz>0 -1 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                           <!---lower>2.443</lower>
+                           <upper>2.443</upper>--->
+
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-link4_hat' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link4_hat</child>
+                   <parent>U-link4</parent>
+                   <axis>
+                       <xyz>0 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+               <joint name='U-joint5' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link5</child>
+                   <parent>U-link4</parent>
+                   <axis>
+                       <xyz>0 0 1</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='U-link5_hat' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-link5_hat</child>
+                   <parent>U-link5</parent>
+                   <axis>
+                       <xyz>0 0 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+               <joint name='U-joint6' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-end</child>
+                   <parent>U-link5</parent>
+                   <axis>
+                       <xyz>0 -1 0</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+               <joint name='U-base_fixed' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>U-base</child>
+                   <parent>link1</parent>
+                   <axis>
+                       <xyz>0 0 1</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>
+
+               <joint name='base_fixed' type='revolute'>
+                   <pose>0 0 0 0 0 0</pose>
+                   <child>base</child>
+                   <parent>base</parent>
+                   <axis>
+                       <xyz>0 0 1</xyz>
+                       <limit>
+                           <lower>0</lower>
+                           <upper>0</upper>
+                       </limit>
+                   </axis>
+               </joint>  <!---->
+             </model>
+            </sdf>
